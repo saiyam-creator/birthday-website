@@ -1,0 +1,127 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royal Proclamation for Kritika</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style src="k.css">
+    
+ </style>
+</head>
+<body>
+  <!-- Hero Section -->
+<section class="section">
+  <h1 class="text-5xl font-bold glow-text mb-10">🎂 Happy Birthday mitarr 🎂</h1>
+  <div class="wax-seal" id="seal"></div>
+  <button id="openScroll" class="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full font-bold transition-all duration-300">
+    Open the Special letter 
+  </button>
+  <div id="scrollImage" class="scroll-container mt-16">
+    <div class="scroll-content" id="scrollText">      
+      <p style=" font-size: 18px;
+      color: white;
+      text-align: center;
+      text-shadow: 0 0 5px #fff,
+                   0 0 10px #fff,
+                   0 0 20px #f0f,
+                   0 0 30px #f0f,
+                   0 0 40px #f0f,
+                   0 0 50px #f0f,
+                   0 0 60px #f0f;"> 
+        Hear ye, hear ye! On this 14th day of July, in the glorious year of 2025,<br/>
+        By decree of the celestial stars and the glow of galaxies,<br/>
+        we gather beneath magic and moonlight to celebrate the 20th birthday of<br/>
+        Her Grace, Lady Kritika of the Glowing Heart.<br/><br/>
+        Let it be inscribed in the annals of the cosmos:<br/>
+        Her kindness lights constellations,<br/>
+        Her courage commands kingdoms,<br/>
+        Her laughter summons sunshine.<br/><br/>
+        May roses bloom in her presence,<br/>
+        May her steps be kissed by stardust,<br/>
+        And may this year crown her with joy, love, and light.<br/><br/>
+        Long live Lady Kritika — Queen of Radiance. 🌹✨
+      </p>
+    </div>
+  </div>
+  <!-- Floating Decor -->
+  <div class="balloon" style="left:15%; animation-delay: 0s;"></div>
+  <div class="balloon" style="left:45%; animation-delay: 1.5s;"></div>
+  <div class="balloon" style="left:75%; animation-delay: 2.5s;"></div>
+  <div class="floating-heart" style="top:20%; left:25%; animation-delay: 0s;"></div>
+  <div class="floating-heart" style="top:50%; left:60%; animation-delay: 0.6s;"></div>
+  <div class="floating-heart" style="top:70%; left:35%; animation-delay: 1.2s;"></div>
+  <div class="star" style="top:5%; left:10%; animation-delay: 0.2s;"></div>
+  <div class="star" style="top:20%; left:30%; animation-delay: 0.4s;"></div>
+  <div class="star" style="top:60%; left:50%; animation-delay: 0.6s;"></div>
+  <div class="star" style="top:80%; left:70%; animation-delay: 0.8s;"></div>
+  <div class="star" style="top:90%; left:20%; animation-delay: 1.2s;"></div>
+  <div class="star" style="top:10%; left:80%; animation-delay: 1.5s;"></div>
+</section>
+<!-- Stargazing Section -->
+<section class="section bg-black text-white">
+  <h2 class="text-3xl font-bold mb-6 glow-text">✨ The Stars When Kritika Was Born ✨</h2>
+  <canvas id="skyCanvas"></canvas>
+  <p class="text-center mt-6 text-lg max-w-2xl">
+    On the night of <strong>14th July 2005</strong>, the Moon glowed in <em>Libra</em>,
+    and stars like <em>Draco</em>, <em>Scorpius</em>, and <em>Hercules</em> shone brightly.
+    The universe itself sparkled to celebrate the birth of our Queen, Kritika. 🌌👸
+  </p>
+</section>
+<div class="stars-bg">
+  <div class="moon"></div> </div>
+  <!-- Generate many twinkle stars -->
+ <section class="my-20 flex flex-col items-center justify-center">
+  <h2 class="text-3xl font-bold glow-text mb-6">📖 Kritika's Magical Pages 📖</h2>
+ <div class="relative w-[420px] h-[300px] perspective">
+ <div class="book-container">
+  <div id="book" class="relative w-full h-full">    </div>
+  </div>
+      <!-- Pages inserted by JS --> 
+  <div class="flex space-x-4 mt-6">
+    <button onclick="prevPage()" class="bg-purple-500 px-4 py-2 rounded text-white font-bold hover:bg-purple-600">← Prev</button>
+    <button onclick="nextPage()" class="bg-purple-500 px-4 py-2 rounded text-white font-bold hover:bg-purple-600">Next →</button>
+  </div>
+<div id="particles-js" class="particles-bg"></div> </section> 
+
+<section id="solar-system" class="solar-section">
+  <div class="sun">Kritika</div>
+
+  <div class="planet orbit1"><div class="planet-inner">Loyalty</div></div>
+  <div class="planet orbit2"><div class="planet-inner">Kindness</div></div>
+  <div class="planet orbit3"><div class="planet-inner">Joy</div></div>
+  <div class="planet orbit4"><div class="planet-inner">Wisdom</div></div>
+  <div class="planet orbit5"><div class="planet-inner">Creativity</div></div>
+  <div class="planet orbit6"><div class="planet-inner">Courage</div></div>
+
+  <div id="space-text" class="space-text">She warms hearts like the sun.</div> </section>
+
+
+
+<section id="kritika-constellation" style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
+  <canvas id="star-canvas"></canvas>
+  <div class="name-overlay">K R I T I K A</div>
+</section>
+
+
+
+<section id="birthdayUniverse">
+  <canvas id="heartCanvas"></canvas>
+  <canvas id="fireworkCanvas" style="display:none"></canvas>
+  <div class="birthday-message" id="birthdayMessage">Happy Birthday Kritika 🎉💖</div>
+  <button id="launchBtn">🎆 Launch Fireworks</button>
+</section>
+
+
+
+
+
+  <script src="kb.js">
+  
+</script>
+
+</body>
+</html>

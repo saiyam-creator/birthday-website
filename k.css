@@ -1,0 +1,426 @@
+body {
+      margin: 0;
+      background: radial-gradient(ellipse at bottom, #1a1a2e, #0f0c29 80%);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+    .section {
+      min-height: 100vh;
+      padding: 5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .glow-text {
+      text-shadow: 0 0 10px #ff00cc, 0 0 20px #3333ff;
+    }
+    .scroll-container {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 0;
+  overflow: hidden;
+  background: url('YOUR_SCROLL_IMAGE.webp') no-repeat center center;
+  background-size: cover;
+  transition: height 1.5s ease-in-out;
+  border-radius: 12px;
+  animation: glow 3s ease-in-out infinite;
+}
+
+    
+    .scroll-content {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      right: 10%;
+      color: #2b1a17;
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0;
+    }
+    .wax-seal {
+      width: 80px;
+      height: 80px;
+      background: crimson;
+      border-radius: 50%;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%) scale(1);
+      box-shadow: 0 0 15px rgba(255,0,0,0.6);
+      z-index: 10;
+    }
+    .floating-heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center / cover;
+      animation: heartbeat 1.5s infinite ease-in-out;
+    }
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: url('https://cdn-icons-png.flaticon.com/512/252/252035.png') no-repeat center center / contain;
+      animation: floatBalloon 8s infinite ease-in-out;
+    }
+    @keyframes floatBalloon {
+      0% { transform: translateY(100vh); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-200px); opacity: 0; }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    .stars-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #0f0c29 100%);
+      z-index: -2;
+      overflow: hidden;
+    }
+.p{
+    color: #ccc;
+}
+    .twinkle-star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+    .shooting-star {
+      position: absolute;
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(90deg, white, transparent);
+      border-radius: 50%;
+      opacity: 0;
+      transform: rotate(-45deg);
+      animation: shooting 10s linear infinite;
+    }
+    @keyframes shooting {
+      0% { transform: translate(0, 0) rotate(-45deg); opacity: 0; }
+      10% { opacity: 1; }
+      80% { transform: translate(400px, 400px) rotate(-45deg); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+    .moon {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #fff, #ccc);
+      border-radius: 50%;
+      box-shadow: 0 0 40px 10px rgba(255,255,255,0.3);
+      z-index: -1;
+    }
+
+    @keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2),
+                0 0 20px rgba(255, 0, 255, 0.3),
+                0 0 30px rgba(255, 20, 147, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5),
+                0 0 40px rgba(255, 20, 147, 0.6),
+                0 0 60px rgba(255, 105, 180, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2),
+                0 0 20px rgba(255, 0, 255, 0.3),
+                0 0 30px rgba(255, 20, 147, 0.2);
+  }
+}
+
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 2000px;
+}
+
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+  background-color: #fcf5e5;
+  border: 2px solid #c4b998;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transform-origin: left center;
+  transition: transform 1s ease, z-index 0s 0.5s;
+  backface-visibility: hidden;
+  overflow: hidden;
+  padding: 1rem;
+  font-family: 'Georgia', serif;
+  color: #3a2c1e;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+  z-index: 0;
+  transition: transform 1s ease, z-index 0s;
+}
+
+.book-container {
+  perspective: 2000px;
+  width: 420px;
+  height: 300px;
+  position: relative;
+}
+
+.page-content {
+  padding: 1rem;
+  color: #333;
+}
+
+.page:nth-child(even) {
+  background: #fff;
+}
+
+.page-content {
+  padding: 1rem;
+  color: #333;
+}
+.page::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.05), transparent 60%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.solar-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #0b0e1b 0%, #060814 100%);
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+/* SUN */
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, #ffe57f, #f57f17);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 20px rgba(255, 174, 0, 0.5), inset 0 0 20px #fff176;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  animation: pulse 4s infinite;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* PLANETS */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+.planet-inner {
+  background: radial-gradient(circle, #89f7fe, #66a6ff);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 15px #66a6ff88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  animation: rotateSelf 8s linear infinite;
+}
+
+@keyframes rotateSelf {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Orbits */
+.orbit1 {
+  animation: orbit1 12s linear infinite;
+}
+.orbit2 {
+  animation: orbit2 16s linear infinite;
+}
+.orbit3 {
+  animation: orbit3 20s linear infinite;
+}
+.orbit4 {
+  animation: orbit4 24s linear infinite;
+}
+.orbit5 {
+  animation: orbit5 28s linear infinite;
+}
+.orbit6 {
+  animation: orbit6 32s linear infinite;
+}
+
+/* Orbit animations */
+@keyframes orbit1 {
+  from { transform: rotate(0deg) translateX(120px); }
+  to { transform: rotate(360deg) translateX(120px); }
+}
+@keyframes orbit2 {
+  from { transform: rotate(0deg) translateX(180px); }
+  to { transform: rotate(360deg) translateX(180px); }
+}
+@keyframes orbit3 {
+  from { transform: rotate(0deg) translateX(240px); }
+  to { transform: rotate(360deg) translateX(240px); }
+}
+@keyframes orbit4 {
+  from { transform: rotate(0deg) translateX(300px); }
+  to { transform: rotate(360deg) translateX(300px); }
+}
+@keyframes orbit5 {
+  from { transform: rotate(0deg) translateX(360px); }
+  to { transform: rotate(360deg) translateX(360px); }
+}
+@keyframes orbit6 {
+  from { transform: rotate(0deg) translateX(420px); }
+  to { transform: rotate(360deg) translateX(420px); }
+}
+
+/* Compliment text */
+.space-text {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.8;
+  animation: fadeText 20s infinite;
+}
+
+@keyframes fadeText {
+  0%,100% { opacity: 0; }
+  10%,90% { opacity: 1; }
+}
+
+#birthdayUniverse {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #heartCanvas, #fireworkCanvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .birthday-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: #ff69b4;
+      text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+      animation: fadeInOut 8s ease-in-out infinite;
+      white-space: nowrap;
+      z-index: 5;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      25%, 75% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    #launchBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: #ff4081;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff4081aa;
+      z-index: 999;
+      transition: background 0.3s;
+    }
+    #launchBtn:hover {
+      background: #e91e63;
+    }
+
+ #kritika-constellation canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #050505 0%, #000 100%);
+    display: block;
+    z-index: 0;
+  }
+
+  .name-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    letter-spacing: 2rem;
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+  }
